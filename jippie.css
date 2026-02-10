@@ -1,0 +1,137 @@
+/* === Body & grundlayout === */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f0f8ff;
+    font-family: sans-serif;
+    position: relative;
+}
+
+/* Rubriker */
+h1 {
+    z-index: 10;
+    font-size: 3rem;
+    text-align: center;
+    color: #ff1493;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #ff1493;
+    margin-bottom: 10px;
+}
+
+/* === Minions GIF på första sidan === */
+.minions-gif {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    z-index: 8;
+}
+
+/* === Fråga och knapp === */
+.question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    z-index: 10;
+}
+
+#reveal-btn {
+    font-size: 1.5rem;
+    padding: 0.8em 2em;
+    border-radius: 2em;
+    border: none;
+    cursor: pointer;
+    background-color: orange;
+    color: white;
+    box-shadow: 0 0.3em 0.8em rgba(255,165,0,0.5);
+    transition: all 0.3s ease;
+}
+
+#reveal-btn:hover { background-color: darkorange; }
+#reveal-btn:active { background-color: orangered; }
+
+/* Hysteriskt skratt GIF */
+#hysteric-gif {
+    display: none;
+    width:70%;
+    margin-top: 20px;
+    z-index: 9;
+}
+
+/* === Confetti === */
+#confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.confetti {
+    position: absolute;
+    top: -20px;
+    opacity: 0.8;
+    animation: fall linear forwards;
+    border-radius: 2px;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* === Knappar Ja/Nej (från första sidan) === */
+button {
+    cursor: pointer;
+    border: none;
+    padding: 1em 2.5em;
+    font-size: 1.5rem;
+    border-radius: 2em;
+    transition: font-size 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0 1rem;
+}
+
+#ja {
+    background-color: green;
+    color: white;
+    box-shadow: 0 0.4em 1em rgba(0, 128, 0, 0.4);
+}
+
+#nej {
+    background-color: red;
+    color: white;
+    box-shadow: 0 0.4em 1em rgba(255, 0, 0, 0.4);
+    flex-shrink: 0;
+}
+
+#ja:hover { background-color: darkgreen; }
+#ja:active { background-color: #006400; }
+
+#nej:hover { background-color: darkred; }
+#nej:active { background-color: #8B0000; }
+
+/* === Responsiv för mobiler === */
+@media (max-width: 400px) {
+    body { gap: 1.5rem; }
+    .minions-gif { width: 180px; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; }
+    button { font-size: 1.2rem; padding: 0.8em 1.8em; }
+}

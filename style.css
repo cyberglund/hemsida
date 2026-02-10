@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 3rem; /* mer luft mellan element */
+    font-size: 1.4rem; /* större bastext */
+    padding: 2.5rem;
+    background-color: #fff;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Bild */
+img {
+    width: 55%;
+    max-width: 300px; /* större bild */
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Rubrik */
+h1 {
+    font-size: 2rem; /* större rubrik */
+    text-align: center;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+/* Container för knapparna */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* lite större mellanrum */
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Gemensam knappstil */
+button {
+    cursor: pointer;
+    border: transparent;
+    padding: 1em 3em; /* större knappar */
+    font-size: 1.8rem; /* större text */
+    border-radius: 6px;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.4); /* lite större skugga */
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+/* Ja-knappen - grön */
+#ja {
+    background-color: green;
+    color: white;
+}
+
+#ja:hover {
+    background: linear-gradient(90deg, rgba(34,139,34,1) 0%, rgba(0,255,127,1) 100%);
+}
+
+#ja:active {
+    transform: translate(0em, 0.2em);
+    background-color: darkgreen;
+}
+
+/* Nej-knappen - röd */
+#nej {
+    background-color: red;
+    color: white;
+    flex-shrink: 0;
+}
+
+#nej:hover {
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,69,0,1) 100%);
+}
+
+#nej:active {
+    transform: translate(0em, 0.2em);
+    background-color: darkred;
+}
+
+/* Media query för små mobiler */
+@media (max-width: 400px) {
+    body { gap: 2rem; font-size: 1.2rem; }
+    img { width: 65%; max-width: 220px; }
+    h1 { font-size: 1.6rem; }
+    button { font-size: 1.4rem; padding: 0.9em 2.5em; }
+}
